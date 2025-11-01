@@ -1,0 +1,122 @@
+[
+  {
+    "instruction": "Summarize the following Jira issue",
+    "input": "It may be executed by `poll`, `commitSync`, `commitAsync`, and `close`\n\nComments:\nJhen-Yung Hsu: I'm working on this :)",
+    "output": "update the docs of AcknowledgementCommitCallback",
+    "task_type": "summarization",
+    "metadata": {
+      "issue_key": "KAFKA-19854",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Minor"
+    }
+  },
+  {
+    "instruction": "Classify the status of this Jira issue (e.g., Open, In Progress, Resolved, Closed)",
+    "input": "Title: update the docs of AcknowledgementCommitCallback\n\nDescription: It may be executed by `poll`, `commitSync`, `commitAsync`, and `close`",
+    "output": "Open",
+    "task_type": "classification_status",
+    "metadata": {
+      "issue_key": "KAFKA-19854",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Minor"
+    }
+  },
+  {
+    "instruction": "Classify the priority of this Jira issue (e.g., Critical, Major, Minor, Trivial)",
+    "input": "Title: update the docs of AcknowledgementCommitCallback\n\nDescription: It may be executed by `poll`, `commitSync`, `commitAsync`, and `close`",
+    "output": "Minor",
+    "task_type": "classification_priority",
+    "metadata": {
+      "issue_key": "KAFKA-19854",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Minor"
+    }
+  },
+  {
+    "instruction": "Answer the following question about this Jira issue",
+    "input": "Title: update the docs of AcknowledgementCommitCallback\n\nDescription: It may be executed by `poll`, `commitSync`, `commitAsync`, and `close`\n\nQuestion: What is this issue about and what problem does it address?",
+    "output": "It may be executed by `poll`, `commitSync`, `commitAsync`, and `close`",
+    "task_type": "qa",
+    "metadata": {
+      "issue_key": "KAFKA-19854",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Minor"
+    }
+  },
+  {
+    "instruction": "Summarize the following Jira issue",
+    "input": "We've observed that the `StreamThread` blocks waiting for a `Future` from the `StateUpdater` in the `StreamsPartitionAssigner#onAssignment()` method when we are moving a task out of the `StateUpdater` and onto the `StreamThread`. This can cause problems because, during restoration or with warmup replicas, the `StateUpdater#runOnce()` method can take a long time (upwards of 20 seconds) when RocksDB stalls writes to allow compaction to keep up. In EOS this blockage may cause the transaction to time out, which is a big mess. This is because the `StreamThread` may have an open transaction before the `StreamsPartitionAssignor#onAssignment()` method is called. Some screenshots from the JFR below (credit to [~eduwerc]).",
+    "output": "StreamThread blocks on StateUpdater during onAssignment()",
+    "task_type": "summarization",
+    "metadata": {
+      "issue_key": "KAFKA-19853",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Classify the status of this Jira issue (e.g., Open, In Progress, Resolved, Closed)",
+    "input": "Title: StreamThread blocks on StateUpdater during onAssignment()\n\nDescription: We've observed that the `StreamThread` blocks waiting for a `Future` from the `StateUpdater` in the `StreamsPartitionAssigner#onAssignment()` method when we are moving a task out of the `StateUpdater` and onto the `StreamThread`. This can cause problems because, during restoration or with warmup replicas, the `StateUpdater#runOnce()` method can take a long time (upwards of 20 seconds) when RocksDB stalls writes to allow compaction to keep up. In EOS this blockage may cause the transaction to time out, which is a big mess. This is because the `StreamThread` may have an open transaction before the `StreamsPartitionAssignor#onAssignment()` method is called. Some screenshots from the JFR below (credit to [~eduwerc]).",
+    "output": "Open",
+    "task_type": "classification_status",
+    "metadata": {
+      "issue_key": "KAFKA-19853",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Classify the priority of this Jira issue (e.g., Critical, Major, Minor, Trivial)",
+    "input": "Title: StreamThread blocks on StateUpdater during onAssignment()\n\nDescription: We've observed that the `StreamThread` blocks waiting for a `Future` from the `StateUpdater` in the `StreamsPartitionAssigner#onAssignment()` method when we are moving a task out of the `StateUpdater` and onto the `StreamThread`. This can cause problems because, during restoration or with warmup replicas, the `StateUpdater#runOnce()` method can take a long time (upwards of 20 seconds) when RocksDB stalls writes to allow compaction to keep up. In EOS this blockage may cause the transaction to time out, which is a big mess. This is because the `StreamThread` may have an open transaction before the `StreamsPartitionAssignor#onAssignment()` method is called. Some screenshots from the JFR below (credit to [~eduwerc]).",
+    "output": "Major",
+    "task_type": "classification_priority",
+    "metadata": {
+      "issue_key": "KAFKA-19853",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Answer the following question about this Jira issue",
+    "input": "Title: StreamThread blocks on StateUpdater during onAssignment()\n\nDescription: We've observed that the `StreamThread` blocks waiting for a `Future` from the `StateUpdater` in the `StreamsPartitionAssigner#onAssignment()` method when we are moving a task out of the `StateUpdater` and onto the `StreamThread`. This can cause problems because, during restoration or with warmup replicas, the `StateUpdater#runOnce()` method can take a long time (upwards of 20 seconds) when RocksDB stalls writes to allow compaction to keep up. In EOS this blockage may cause the transaction to time out, which is a big mess. This is because the `StreamThread` may have an open transaction before the `StreamsPartitionAssignor#onAssignment()` method is called. Some screenshots from the JFR below (credit to [~eduwerc]).\n\nQuestion: What is this issue about and what problem does it address?",
+    "output": "We've observed that the `StreamThread` blocks waiting for a `Future` from the `StateUpdater` in the `StreamsPartitionAssigner#onAssignment()` method when we are moving a task out of the `StateUpdater` and onto the `StreamThread`. This can cause problems because, during restoration or with warmup replicas, the `StateUpdater#runOnce()` method can take a long time (upwards of 20 seconds) when RocksDB stalls writes to allow compaction to keep up. In EOS this blockage may cause the transaction to time out, which is a big mess. This is because the `StreamThread` may have an open transaction before the `StreamsPartitionAssignor#onAssignment()` method is called. Some screenshots from the JFR below (credit to [~eduwerc]).",
+    "task_type": "qa",
+    "metadata": {
+      "issue_key": "KAFKA-19853",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Summarize the following Jira issue",
+    "input": "",
+    "output": "MetadataShell read 0000-0000.checkpoint will cause infinite loop",
+    "task_type": "summarization",
+    "metadata": {
+      "issue_key": "KAFKA-19852",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Classify the status of this Jira issue (e.g., Open, In Progress, Resolved, Closed)",
+    "input": "Title: MetadataShell read 0000-0000.checkpoint will cause infinite loop\n\nDescription: ",
+    "output": "Open",
+    "task_type": "classification_status",
+    "metadata": {
+      "issue_key": "KAFKA-19852",
+      "project": "KAFKA",
+      "status": "Open",
+      "priority": "Major"
+    }
+  }
+]

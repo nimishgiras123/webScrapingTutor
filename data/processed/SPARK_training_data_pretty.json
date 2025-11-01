@@ -1,0 +1,122 @@
+[
+  {
+    "instruction": "Summarize the following Jira issue",
+    "input": "",
+    "output": "Cover HashedRelation#close in HashedRelationSuite",
+    "task_type": "summarization",
+    "metadata": {
+      "issue_key": "SPARK-54132",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Classify the status of this Jira issue (e.g., Open, In Progress, Resolved, Closed)",
+    "input": "Title: Cover HashedRelation#close in HashedRelationSuite\n\nDescription: ",
+    "output": "Open",
+    "task_type": "classification_status",
+    "metadata": {
+      "issue_key": "SPARK-54132",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Classify the priority of this Jira issue (e.g., Critical, Major, Minor, Trivial)",
+    "input": "Title: Cover HashedRelation#close in HashedRelationSuite\n\nDescription: ",
+    "output": "Major",
+    "task_type": "classification_priority",
+    "metadata": {
+      "issue_key": "SPARK-54132",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Answer the following question about this Jira issue",
+    "input": "Title: Cover HashedRelation#close in HashedRelationSuite\n\nDescription: \n\nQuestion: What is this issue about and what problem does it address?",
+    "output": "Cover HashedRelation#close in HashedRelationSuite",
+    "task_type": "qa",
+    "metadata": {
+      "issue_key": "SPARK-54132",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Summarize the following Jira issue",
+    "input": "New version, support for python 3.14 https://pandas.pydata.org/pandas-docs/version/2.3/whatsnew/v2.3.3.html",
+    "output": "Update pandas to 2.3.3",
+    "task_type": "summarization",
+    "metadata": {
+      "issue_key": "SPARK-54131",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Classify the status of this Jira issue (e.g., Open, In Progress, Resolved, Closed)",
+    "input": "Title: Update pandas to 2.3.3\n\nDescription: New version, support for python 3.14 https://pandas.pydata.org/pandas-docs/version/2.3/whatsnew/v2.3.3.html",
+    "output": "Open",
+    "task_type": "classification_status",
+    "metadata": {
+      "issue_key": "SPARK-54131",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Classify the priority of this Jira issue (e.g., Critical, Major, Minor, Trivial)",
+    "input": "Title: Update pandas to 2.3.3\n\nDescription: New version, support for python 3.14 https://pandas.pydata.org/pandas-docs/version/2.3/whatsnew/v2.3.3.html",
+    "output": "Major",
+    "task_type": "classification_priority",
+    "metadata": {
+      "issue_key": "SPARK-54131",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Answer the following question about this Jira issue",
+    "input": "Title: Update pandas to 2.3.3\n\nDescription: New version, support for python 3.14 https://pandas.pydata.org/pandas-docs/version/2.3/whatsnew/v2.3.3.html\n\nQuestion: What is this issue about and what problem does it address?",
+    "output": "New version, support for python 3.14 https://pandas.pydata.org/pandas-docs/version/2.3/whatsnew/v2.3.3.html",
+    "task_type": "qa",
+    "metadata": {
+      "issue_key": "SPARK-54131",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Summarize the following Jira issue",
+    "input": "There are many instances where we simply assert without providing a valid error message. This complicates debugging. We should implement proper error messages to make debugging easier.",
+    "output": "Add detailed error messages for catalog assertion failures",
+    "task_type": "summarization",
+    "metadata": {
+      "issue_key": "SPARK-54130",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  },
+  {
+    "instruction": "Classify the status of this Jira issue (e.g., Open, In Progress, Resolved, Closed)",
+    "input": "Title: Add detailed error messages for catalog assertion failures\n\nDescription: There are many instances where we simply assert without providing a valid error message. This complicates debugging. We should implement proper error messages to make debugging easier.",
+    "output": "Open",
+    "task_type": "classification_status",
+    "metadata": {
+      "issue_key": "SPARK-54130",
+      "project": "SPARK",
+      "status": "Open",
+      "priority": "Major"
+    }
+  }
+]
