@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Data files (we don't want to upload large datasets to GitHub)
+data/raw/*.json
+data/processed/*.jsonl
+
+# Checkpoints (these are temporary)
+data/checkpoints/*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep folder structure but not contents
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/checkpoints/.gitkeep
