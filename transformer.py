@@ -52,11 +52,27 @@ class DataTransformer:
                 return value.get(nested_key, "Unknown")
             
             if isinstance(value, list):
-                return ", ".join(str(v) for v in value)
+                valid_items = [str(v) for v in value if v is not None]
+                return ", ".join(valid_items) if valid_items else "None"
             
             return str(value)
         except Exception:
             return "Unknown"
+    
+    def create_metadata(self, issue: Dict) -> Dict:
+        return {
+            "issue_key": issue.get('key', 'Unknown'),
+            "project": self.project_key,
+            "summary": self.clean_text(issue.get('fields', {}).get('summary', '')),
+            "status": self.get_field_value(issue, 'status', 'name'),
+            "priority": self.get_field_value(issue, 'priority', 'name'),
+            "assignee": self.get_field_value(issue, 'assignee', 'displayName'),
+            "reporter": self.get_field_value(issue, 'reporter', 'displayName'),
+            "created": self.get_field_value(issue, 'created'),
+            "updated": self.get_field_value(issue, 'updated'),
+            "resolutiondate": self.get_field_value(issue, 'resolutiondate'),
+            "labels": self.get_field_value(issue, 'labels')
+        }
     
     def create_summarization_task(self, issue: Dict) -> Dict:
         fields = issue.get('fields', {})
@@ -73,12 +89,7 @@ class DataTransformer:
             "input": full_input,
             "output": summary,
             "task_type": "summarization",
-            "metadata": {
-                "issue_key": issue.get('key', 'Unknown'),
-                "project": self.project_key,
-                "status": self.get_field_value(issue, 'status', 'name'),
-                "priority": self.get_field_value(issue, 'priority', 'name')
-            }
+            "metadata": self.create_metadata(issue)
         }
     
     def create_classification_task(self, issue: Dict, classify_by: str = "status") -> Dict:
@@ -103,12 +114,7 @@ class DataTransformer:
             "input": full_input,
             "output": label,
             "task_type": f"classification_{classify_by}",
-            "metadata": {
-                "issue_key": issue.get('key', 'Unknown'),
-                "project": self.project_key,
-                "status": self.get_field_value(issue, 'status', 'name'),
-                "priority": self.get_field_value(issue, 'priority', 'name')
-            }
+            "metadata": self.create_metadata(issue)
         }
     
     def create_qa_task(self, issue: Dict) -> Dict:
@@ -126,12 +132,7 @@ class DataTransformer:
             "input": full_input,
             "output": answer,
             "task_type": "qa",
-            "metadata": {
-                "issue_key": issue.get('key', 'Unknown'),
-                "project": self.project_key,
-                "status": self.get_field_value(issue, 'status', 'name'),
-                "priority": self.get_field_value(issue, 'priority', 'name')
-            }
+            "metadata": self.create_metadata(issue)
         }
     
     def transform_issue(self, issue: Dict) -> List[Dict]:
